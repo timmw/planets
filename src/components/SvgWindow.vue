@@ -83,8 +83,8 @@ export default {
     },
     onmousedown(e) {
       this.mousedownAt = {
-        x: e.offsetX,
-        y: e.offsetY,
+        x: e.clientX,
+        y: e.clientY,
       };
 
       this.previousViewport = { ...this.viewport };
@@ -92,10 +92,10 @@ export default {
     onmousemove: throttle(function (e) {
       if (e.buttons) {
         // left click is pressed
-        const { offsetX, offsetY } = e;
+        const { clientX, clientY } = e;
 
-        const dx = offsetX - this.mousedownAt.x;
-        const dy = offsetY - this.mousedownAt.y;
+        const dx = clientX - this.mousedownAt.x;
+        const dy = clientY - this.mousedownAt.y;
 
         this.viewport.minX = this.previousViewport.minX - dx;
         this.viewport.minY = this.previousViewport.minY - dy;
