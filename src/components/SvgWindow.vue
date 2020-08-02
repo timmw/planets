@@ -97,8 +97,8 @@ export default {
         const dx = clientX - this.mousedownAt.x;
         const dy = clientY - this.mousedownAt.y;
 
-        this.viewport.minX = this.previousViewport.minX - dx;
-        this.viewport.minY = this.previousViewport.minY - dy;
+        this.viewport.minX = this.previousViewport.minX - dx / this.zoom;
+        this.viewport.minY = this.previousViewport.minY - dy / this.zoom;
       }
     }, 20),
   },
