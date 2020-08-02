@@ -2,17 +2,29 @@
   <div>
     <p v-if="selectedBody">{{ selectedBody.name }}</p>
     <SvgWindow id="svg" :width="1600" :height="800">
-      <circle
-        v-for="body in bodies"
-        :key="body.name"
-        :cx="body.x"
-        :cy="body.y"
-        :r="body.radius"
-        :fill="body.color"
-        @click="selectedBody = body"
-      >
-        <title>{{ body.name }}</title>
-      </circle>
+      <template v-for="body in bodies">
+        <circle
+          :key="body.name"
+          :cx="body.x"
+          :cy="body.y"
+          :r="body.radius"
+          :fill="body.color"
+          @click="selectedBody = body"
+        >
+          <title>{{ body.name }}</title>
+        </circle>
+        <circle
+          v-for="satellite in body.satellites"
+          :key="satellite.name"
+          :cx="satellite.x"
+          :cy="satellite.y"
+          :r="satellite.radius"
+          :fill="satellite.color"
+          @click="selectedBody = satellite"
+        >
+          <title>{{ satellite.name }}</title>
+        </circle>
+      </template>
     </SvgWindow>
     <div class="controls">
       <button @click="togglePlay">Play/pause</button>
@@ -43,63 +55,72 @@ const bodies = [
     name: "Sun",
     color: "yellow",
     radius: 696340 / 3, // sun is 1 third size because it's too darn big
-    avgDistanceFromSun: 0,
+    avgDistanceFromParent: 0,
     orbitalPeriod: 0.0,
   },
   {
     name: "Mercury",
     color: "grey",
     radius: 2439,
-    avgDistanceFromSun: 46962000,
+    avgDistanceFromParent: 46962000,
     orbitalPeriod: 0.241095,
   },
   {
     name: "Venus",
     color: "white",
     radius: 6052,
-    avgDistanceFromSun: 108810000,
+    avgDistanceFromParent: 108810000,
     orbitalPeriod: 0.616438,
   },
   {
     name: "Earth",
     color: "blue",
     radius: 6371,
-    avgDistanceFromSun: 151830000,
+    avgDistanceFromParent: 151830000,
     orbitalPeriod: 1.0,
+    satellites: [
+      {
+        name: "Moon",
+        color: "white",
+        radius: 1737,
+        avgDistanceFromParent: 384402,
+        orbitalPeriod: 0.074854,
+      },
+    ],
   },
   {
     name: "Mars",
     color: "red",
     radius: 3390,
-    avgDistanceFromSun: 207880000,
+    avgDistanceFromParent: 207880000,
     orbitalPeriod: 1.882191,
   },
   {
     name: "Jupiter",
     color: "orange",
     radius: 69911,
-    avgDistanceFromSun: 770790000,
+    avgDistanceFromParent: 770790000,
     orbitalPeriod: 11.865753,
   },
   {
     name: "Saturn",
     color: "gold",
     radius: 58232,
-    avgDistanceFromSun: 1494600000,
+    avgDistanceFromParent: 1494600000,
     orbitalPeriod: 29.443835,
   },
   {
     name: "Uranus",
     color: "lightblue",
     radius: 25326,
-    avgDistanceFromSun: 2960700000,
+    avgDistanceFromParent: 2960700000,
     orbitalPeriod: 83.805479,
   },
   {
     name: "Neptune",
     color: "mediumblue",
     radius: 24622,
-    avgDistanceFromSun: 4476500000,
+    avgDistanceFromParent: 4476500000,
     orbitalPeriod: 163.835616,
   },
 ];
@@ -109,13 +130,17 @@ const coords = (hyp, θ) => ({
   y: Math.sin(θ) * hyp,
 });
 
-const adjustRatios = (body, t, scale) => {
+const adjustRatios = (body, t, scale, origin = { x: 0.0, y: 0.0 }) => {
   const θ =
     body.orbitalPeriod > 0 ? t * ((2 * Math.PI) / body.orbitalPeriod) : 0;
 
+  const c = coords(body.avgDistanceFromParent / scale.distance, -θ);
+  c.x += origin.x;
+  c.y += origin.y;
+
   return {
     ...body,
-    ...coords(body.avgDistanceFromSun / scale.distance, -θ),
+    ...c,
     radius: body.radius / scale.size,
   };
 };
@@ -142,9 +167,20 @@ export default {
   },
   computed: {
     bodies() {
-      return bodies.map((b) =>
-        adjustRatios(b, this.time / this.scale.secondsPerYear, this.scale)
-      );
+      return bodies.map((b) => {
+        let bCalc = adjustRatios(
+          b,
+          this.time / this.scale.secondsPerYear,
+          this.scale
+        );
+        bCalc.satellites = (bCalc.satellites || []).map((s) =>
+          adjustRatios(s, this.time / this.scale.secondsPerYear, this.scale, {
+            x: bCalc.x,
+            y: bCalc.y,
+          })
+        );
+        return bCalc;
+      });
     },
   },
   beforeUnmount() {
