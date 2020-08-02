@@ -13,6 +13,17 @@
 
 <script>
 import { throttle } from "lodash-es";
+
+/**
+ * How far to displace a point when zooming in or out
+ *
+ * @param {Number} length length of viewport edge
+ * @param {Number} zoom zoom multiplier
+ * @param {Number} anchor position to fix
+ */
+const displacement = (length, zoom, anchor) =>
+  (length / zoom) * (anchor / length);
+
 export default {
   name: "SvgWindow",
   props: {
@@ -38,9 +49,12 @@ export default {
   },
   computed: {
     viewBox() {
-      return [this.viewport.minX, this.viewport.minY, this.width, this.height]
-        .map((x) => x / this.zoom)
-        .join(" ");
+      return [
+        this.viewport.minX,
+        this.viewport.minY,
+        this.width / this.zoom,
+        this.height / this.zoom,
+      ].join(" ");
     },
   },
   beforeUnmount() {
@@ -53,17 +67,24 @@ export default {
   },
   methods: {
     onwheel(e) {
+      const { clientX, clientY } = e;
+      const svgBoundingRect = this.$refs.svg.getBoundingClientRect();
+      const offsetX = clientX - svgBoundingRect.x;
+      const offsetY = clientY - svgBoundingRect.y;
+
       if (e.deltaY > 0) {
         // wheel down
+        this.viewport.minX -= displacement(this.width, this.zoom, offsetX);
+        this.viewport.minY -= displacement(this.height, this.zoom, offsetY);
+
         this.zoom /= 2;
       } else {
         // wheel up
         this.zoom *= 2;
-      }
 
-      // mouse coords relative to svg element
-      const { offsetX, offsetY } = e;
-      console.debug({ zoom: this.zoom });
+        this.viewport.minX += displacement(this.width, this.zoom, offsetX);
+        this.viewport.minY += displacement(this.height, this.zoom, offsetY);
+      }
     },
     onkeydown(e) {
       switch (e.code) {
