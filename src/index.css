@@ -1,0 +1,18 @@
+html, body, #app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: black;
+  color: white;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
