@@ -1,27 +1,30 @@
 <template>
-  <SvgWindow id="svg">
+  <SvgWindow
+    id="svg"
+    v-slot="{ zoom }"
+  >
     <template v-for="body in bodies">
-        <circle
-          :key="body.name"
-          :cx="body.x"
-          :cy="body.y"
-          :r="body.radius"
-          :fill="body.color"
-          @click="selectedBody = body"
-        >
-          <title>{{ body.name }}</title>
-        </circle>
-        <circle
-          v-for="satellite in body.satellites"
-          :key="satellite.name"
-          :cx="satellite.x"
-          :cy="satellite.y"
-          :r="satellite.radius"
-          :fill="satellite.color"
-          @click="selectedBody = satellite"
-        >
-          <title>{{ satellite.name }}</title>
-        </circle>
+      <Body
+        :key="body.name"
+        :body="body"
+        :draw-path="body !== bodies[0]"
+        :draw-outline="body !== bodies[0]"
+        :parent-body="bodies[0]"
+        :path-width="1 / zoom"
+        :outline-width="1 / zoom"
+        :outline-radius="10 / zoom"
+      />
+      <Body
+        v-for="satellite in body.satellites"
+        :key="satellite.name"
+        :body="satellite"
+        draw-path
+        :draw-outline="false"
+        :parent-body="body"
+        :path-width="1 / zoom"
+        :outline-width="1 / zoom"
+        :outline-radius="10 / zoom"
+      />
     </template>
   </SvgWindow>
   <div class="controls">
@@ -50,6 +53,7 @@
 <script>
 import SvgWindow from "./SvgWindow.vue";
 import bodies from "../simulation/bodies";
+import Body from "./Body.vue";
 
 const coords = (hyp, θ) => ({
   x: Math.cos(θ) * hyp,
@@ -68,6 +72,7 @@ const adjustRatios = (body, t, scale, origin = { x: 0.0, y: 0.0 }) => {
     ...body,
     ...c,
     radius: body.radius / scale.size,
+    avgDistanceFromParent: body.avgDistanceFromParent / scale.distance
   };
 };
 
@@ -77,6 +82,7 @@ let animationFrameRequestId;
 export default {
   name: "Planets",
   components: {
+    Body,
     SvgWindow,
   },
   data() {
@@ -84,7 +90,7 @@ export default {
       selectedBody: null,
       time: 0.0,
       scale: {
-        size: 2000,
+        size: 300000,
         distance: 300000,
         secondsPerYear: 30,
       },

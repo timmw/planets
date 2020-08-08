@@ -7,7 +7,7 @@
     @mousemove="onmousemove"
     @mousedown="onmousedown"
   >
-    <slot />
+    <slot :zoom="zoom" />
   </svg>
 </template>
 

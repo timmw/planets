@@ -2,7 +2,7 @@ export default [
   {
     name: "Sun",
     color: "yellow",
-    radius: 696340 / 3, // sun is 1 third size because it's too darn big
+    radius: 696340,
     avgDistanceFromParent: 0,
     orbitalPeriod: 0.0,
   },
