@@ -2,7 +2,6 @@
   <!-- Body outline -->
   <circle
     v-if="drawOutline"
-    :key="body.name + '-outline'"
     :cx="body.x"
     :cy="body.y"
     :r="outlineRadius"
@@ -14,7 +13,6 @@
   <!-- The orbit path -->
   <circle
     v-if="drawPath"
-    :key="body.name + '-path'"
     :cx="parentBody.x"
     :cy="parentBody.y"
     :r="body.avgDistanceFromParent"
@@ -25,7 +23,6 @@
   />
   <!-- The body -->
   <circle
-    :key="body.name"
     :cx="body.x"
     :cy="body.y"
     :r="body.radius"
