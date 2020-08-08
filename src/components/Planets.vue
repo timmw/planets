@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <p v-if="selectedBody">{{ selectedBody.name }}</p>
-    <SvgWindow id="svg" :width="1600" :height="800">
-      <template v-for="body in bodies">
+  <SvgWindow id="svg">
+    <template v-for="body in bodies">
         <circle
           :key="body.name"
           :cx="body.x"
@@ -24,28 +22,29 @@
         >
           <title>{{ satellite.name }}</title>
         </circle>
-      </template>
-    </SvgWindow>
-    <div class="controls">
-      <button @click="togglePlay">Play/pause</button>
-      <label>
-        Seconds per Earth year:
-        <input v-model="scale.secondsPerYear" />
-      </label>
-      <label>
-        Planet scale (km per pixel):
-        <input v-model="scale.size" />
-      </label>
-      <label>
-        Distance scale (km per pixel):
-        <input v-model="scale.distance" />
-      </label>
-    </div>
-    <!-- <div class="debug">
+    </template>
+  </SvgWindow>
+  <div class="controls">
+    <button @click="togglePlay">
+      Play/pause
+    </button>
+    <label>
+      Seconds per Earth year:
+      <input v-model="scale.secondsPerYear">
+    </label>
+    <label>
+      Planet scale (km per pixel):
+      <input v-model="scale.size">
+    </label>
+    <label>
+      Distance scale (km per pixel):
+      <input v-model="scale.distance">
+    </label>
+  </div>
+  <!-- <div class="debug">
       <p>Zoom: {{zoom}}</p>
       <p>Center: x: {{center.x}} y: {{center.y}}</p>
-    </div>-->
-  </div>
+  </div>-->
 </template>
 
 <script>
