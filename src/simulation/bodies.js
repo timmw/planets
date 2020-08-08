@@ -49,6 +49,36 @@ export default [
     radius: 69911,
     avgDistanceFromParent: 770790000,
     orbitalPeriod: 11.865753,
+    satellites: [
+      {
+        name: "Io",
+        color: "gold",
+        radius: 1821.6,
+        avgDistanceFromParent: 421700,
+        orbitalPeriod: 0.004846,
+      },
+      {
+        name: "Europa",
+        color: "white",
+        radius: 1560.8,
+        avgDistanceFromParent: 670900,
+        orbitalPeriod: 0.009729,
+      },
+      {
+        name: "Ganymede",
+        color: "white",
+        radius: 2634.1,
+        avgDistanceFromParent: 1070400,
+        orbitalPeriod: 0.019601,
+      },
+      {
+        name: "Callisto",
+        color: "white",
+        radius: 2400,
+        avgDistanceFromParent: 1882700,
+        orbitalPeriod: 0.045723,
+      },
+    ],
   },
   {
     name: "Saturn",
