@@ -1,8 +1,8 @@
 <template>
   <svg
     ref="svg"
-    :width="width"
-    :height="height"
+    width="100%"
+    height="100%"
     :viewBox="viewBox"
     @mousemove="onmousemove"
     @mousedown="onmousedown"
@@ -26,35 +26,33 @@ const displacement = (length, zoom, anchor) =>
 
 export default {
   name: "SvgWindow",
-  props: {
-    height: Number,
-    width: Number,
-  },
   data() {
     return {
       zoom: 1,
       viewport: {
-        minX: -this.width / 2,
-        minY: -this.height / 2,
+        minX: -this.elWidth / 2,
+        minY: -this.elHeight / 2,
       },
       mousedownAt: {
         x: null,
         y: null,
       },
-      previousViewport: {
-        minX: -this.width / 2,
-        minY: -this.height / 2,
-      },
+      previousViewport: null,
+      elWidth: 0,
+      elHeight: 0,
+      loaded: false,
     };
   },
   computed: {
     viewBox() {
-      return [
-        this.viewport.minX,
-        this.viewport.minY,
-        this.width / this.zoom,
-        this.height / this.zoom,
-      ].join(" ");
+      return this.loaded
+        ? [
+            this.viewport.minX,
+            this.viewport.minY,
+            this.elWidth / this.zoom,
+            this.elHeight / this.zoom,
+          ].join(" ")
+        : "0 0 0 0";
     },
   },
   beforeUnmount() {
@@ -62,10 +60,21 @@ export default {
     document.removeEventListener("keydown", this.onkeydown);
   },
   mounted() {
+    this.setDimensions();
+    this.loaded = true;
     this.$refs.svg.addEventListener("wheel", this.onwheel, { passive: true });
     document.addEventListener("keydown", this.onkeydown);
   },
   methods: {
+    setDimensions() {
+      const svgBoundingClientRect = this.$refs.svg.getBoundingClientRect();
+      this.elWidth = svgBoundingClientRect.width;
+      this.elHeight = svgBoundingClientRect.height;
+      this.viewport = {
+        minX: -this.elWidth / 2,
+        minY: -this.elHeight / 2,
+      };
+    },
     onwheel(e) {
       const { clientX, clientY } = e;
       const svgBoundingRect = this.$refs.svg.getBoundingClientRect();
@@ -74,16 +83,16 @@ export default {
 
       if (e.deltaY > 0) {
         // wheel down
-        this.viewport.minX -= displacement(this.width, this.zoom, offsetX);
-        this.viewport.minY -= displacement(this.height, this.zoom, offsetY);
+        this.viewport.minX -= displacement(this.elWidth, this.zoom, offsetX);
+        this.viewport.minY -= displacement(this.elHeight, this.zoom, offsetY);
 
         this.zoom /= 2;
       } else {
         // wheel up
         this.zoom *= 2;
 
-        this.viewport.minX += displacement(this.width, this.zoom, offsetX);
-        this.viewport.minY += displacement(this.height, this.zoom, offsetY);
+        this.viewport.minX += displacement(this.elWidth, this.zoom, offsetX);
+        this.viewport.minY += displacement(this.elHeight, this.zoom, offsetY);
       }
     },
     onkeydown(e) {

@@ -156,12 +156,16 @@ export default {
 
 <style scoped>
 #svg {
-  outline: red solid 1px;
   color: white;
 }
 
 .debug {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.controls {
+  position: absolute;
+  top: 0;
 }
 </style>
