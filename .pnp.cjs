@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:7.6.0"],\
             ["eslint-config-prettier", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:6.11.0"],\
             ["eslint-plugin-vue", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:7.0.0-beta.1"],\
-            ["lodash-es", "npm:4.17.15"],\
+            ["lodash-es", "npm:4.17.21"],\
             ["prettier", "npm:2.0.5"],\
             ["serve", "npm:11.3.2"],\
             ["vite", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:3.1.0"],\
@@ -2022,10 +2022,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["lodash-es", [\
-        ["npm:4.17.15", {\
-          "packageLocation": "./.yarn/cache/lodash-es-npm-4.17.15-ad31f98cc6-dd76e36efc.zip/node_modules/lodash-es/",\
+        ["npm:4.17.21", {\
+          "packageLocation": "./.yarn/cache/lodash-es-npm-4.17.21-b45832dfce-05cbffad6e.zip/node_modules/lodash-es/",\
           "packageDependencies": [\
-            ["lodash-es", "npm:4.17.15"]\
+            ["lodash-es", "npm:4.17.21"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2494,7 +2494,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:7.6.0"],\
             ["eslint-config-prettier", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:6.11.0"],\
             ["eslint-plugin-vue", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:7.0.0-beta.1"],\
-            ["lodash-es", "npm:4.17.15"],\
+            ["lodash-es", "npm:4.17.21"],\
             ["prettier", "npm:2.0.5"],\
             ["serve", "npm:11.3.2"],\
             ["vite", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:3.1.0"],\

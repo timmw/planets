@@ -7,7 +7,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.17.21",
     "vue": "^3.2.39"
   },
   "devDependencies": {
