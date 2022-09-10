@@ -3,9 +3,8 @@
     id="svg"
     v-slot="{ zoom }"
   >
-    <template v-for="body in bodies">
+    <template v-for="body in bodies" :key="body.name">
       <Body
-        :key="body.name"
         :body="body"
         :draw-path="body !== bodies[0]"
         :draw-outline="body !== bodies[0]"
