@@ -2,22 +2,23 @@
   "name": "planets",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0 --port 3000",
     "build": "vite build",
     "lint": "eslint ."
   },
   "dependencies": {
     "lodash-es": "^4.17.15",
-    "vue": "^3.0.0-rc.1"
+    "vue": "^3.2.39"
   },
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.0.0-rc.1",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "@vue/compiler-sfc": "^3.2.39",
     "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-vue": "next",
     "prettier": "^2.0.5",
     "serve": "^11.3.2",
-    "vite": "^1.0.0-rc.1"
+    "vite": "^3.1.0"
   },
   "eslintConfig": {
     "root": true,
