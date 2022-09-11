@@ -74,7 +74,7 @@ let start;
 let animationFrameRequestId;
 
 export default {
-  name: "Planets",
+  name: "SolarSystem",
   components: {
     CelestialBody,
     SvgWindow,

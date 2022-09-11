@@ -1,14 +1,14 @@
 <template>
-  <Planets />
+  <SolarSystem />
 </template>
 
 <script>
-import Planets from "./components/Planets.vue";
+import SolarSystem from "./components/SolarSystem.vue";
 
 export default {
   name: "App",
   components: {
-    Planets,
+    SolarSystem,
   },
 };
 </script>
