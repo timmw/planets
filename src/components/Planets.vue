@@ -1,8 +1,5 @@
 <template>
-  <SvgWindow
-    id="svg"
-    v-slot="{ zoom }"
-  >
+  <SvgWindow id="svg" v-slot="{ zoom }">
     <template v-for="body in bodies" :key="body.name">
       <Body
         :body="body"
@@ -27,20 +24,18 @@
     </template>
   </SvgWindow>
   <div class="controls">
-    <button @click="togglePlay">
-      Play/pause
-    </button>
+    <button @click="togglePlay">Play/pause</button>
     <label>
       Seconds per Earth year:
-      <input v-model="scale.secondsPerYear">
+      <input v-model="scale.secondsPerYear" />
     </label>
     <label>
       Planet scale (km per pixel):
-      <input v-model="scale.size">
+      <input v-model="scale.size" />
     </label>
     <label>
       Distance scale (km per pixel):
-      <input v-model="scale.distance">
+      <input v-model="scale.distance" />
     </label>
   </div>
   <!-- <div class="debug">
@@ -71,7 +66,7 @@ const adjustRatios = (body, t, scale, origin = { x: 0.0, y: 0.0 }) => {
     ...body,
     ...c,
     radius: body.radius / scale.size,
-    avgDistanceFromParent: body.avgDistanceFromParent / scale.distance
+    avgDistanceFromParent: body.avgDistanceFromParent / scale.distance,
   };
 };
 

@@ -22,12 +22,7 @@
     :stroke-width="pathWidth"
   />
   <!-- The body -->
-  <circle
-    :cx="body.x"
-    :cy="body.y"
-    :r="body.radius"
-    :fill="body.color"
-  >
+  <circle :cx="body.x" :cy="body.y" :r="body.radius" :fill="body.color">
     <title>{{ body.name }}</title>
   </circle>
 </template>
@@ -36,32 +31,32 @@ export default {
   props: {
     body: {
       type: Object,
-      required: true
+      required: true,
     },
     parentBody: {
       type: Object,
-      required: true
+      required: true,
     },
     drawPath: {
       type: Boolean,
-      required: true
+      required: true,
     },
     drawOutline: {
       type: Boolean,
-      required: true
+      required: true,
     },
     pathWidth: {
       type: Number,
-      default: null
+      default: null,
     },
     outlineRadius: {
       type: Number,
-      default: null
+      default: null,
     },
     outlineWidth: {
       type: Number,
-      default: null
-    }
+      default: null,
+    },
   },
 };
 </script>
