@@ -1,7 +1,7 @@
 <template>
   <SvgWindow id="svg" v-slot="{ zoom }">
     <template v-for="body in bodies" :key="body.name">
-      <Body
+      <CelestialBody
         :body="body"
         :draw-path="body !== bodies[0]"
         :draw-outline="body !== bodies[0]"
@@ -10,7 +10,7 @@
         :outline-width="1 / zoom"
         :outline-radius="10 / zoom"
       />
-      <Body
+      <CelestialBody
         v-for="satellite in body.satellites"
         :key="satellite.name"
         :body="satellite"
@@ -47,7 +47,7 @@
 <script>
 import SvgWindow from "./SvgWindow.vue";
 import bodies from "../simulation/bodies";
-import Body from "./Body.vue";
+import CelestialBody from "./CelestialBody.vue";
 
 const coords = (hyp, θ) => ({
   x: Math.cos(θ) * hyp,
@@ -76,7 +76,7 @@ let animationFrameRequestId;
 export default {
   name: "Planets",
   components: {
-    Body,
+    CelestialBody,
     SvgWindow,
   },
   data() {
