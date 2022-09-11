@@ -1,8 +1,14 @@
 {
-    "files.exclude": {
-        "/.pnp.cjs": true,
-        "/.pnp.loader.mjs": true,
-        "/.yarn/**/*": true,
-        "/yarn.lock": true
-    }
+  "files.exclude": {
+    "/.pnp.cjs": true,
+    "/.pnp.loader.mjs": true,
+    "/.yarn/**/*": true,
+    "/yarn.lock": true
+  },
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
 }
