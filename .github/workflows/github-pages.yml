@@ -19,10 +19,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Build
+      - name: Install dependencies
+        run: yarn
+
+      - name: Lint
         run: |
-          yarn
-          yarn build --base=/planets/
+          yarn prettier --check .
+
+      - name: Build
+        run: yarn build --base=/planets/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
