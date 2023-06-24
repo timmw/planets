@@ -428,7 +428,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@npmcli/fs", "npm:2.1.2"],\
             ["@gar/promisify", "npm:1.1.3"],\
-            ["semver", "npm:7.3.7"]\
+            ["semver", "npm:7.5.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1192,7 +1192,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["natural-compare", "npm:1.4.0"],\
             ["nth-check", "npm:2.1.1"],\
             ["postcss-selector-parser", "npm:6.0.10"],\
-            ["semver", "npm:7.3.7"],\
+            ["semver", "npm:7.5.3"],\
             ["vue-eslint-parser", "virtual:4124f17acd756827770058b1da1bbd266dc1a0bd6107db65d9b598b9903c9a33fac41f820041107aa0307c4bf2f0dde00c1730fc5028236c84cbefafe3640553#npm:9.3.1"],\
             ["xml-name-validator", "npm:4.0.0"]\
           ],\
@@ -2034,7 +2034,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nopt", "npm:5.0.0"],\
             ["npmlog", "npm:6.0.2"],\
             ["rimraf", "npm:3.0.2"],\
-            ["semver", "npm:7.3.7"],\
+            ["semver", "npm:7.5.3"],\
             ["tar", "npm:6.1.11"],\
             ["which", "npm:2.0.2"]\
           ],\
@@ -2383,10 +2383,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["semver", [\
-        ["npm:7.3.7", {\
-          "packageLocation": "./.yarn/cache/semver-npm-7.3.7-3bfe704194-2fa3e87756.zip/node_modules/semver/",\
+        ["npm:7.5.3", {\
+          "packageLocation": "./.yarn/cache/semver-npm-7.5.3-275095dbf3-9d58db1652.zip/node_modules/semver/",\
           "packageDependencies": [\
-            ["semver", "npm:7.3.7"],\
+            ["semver", "npm:7.5.3"],\
             ["lru-cache", "npm:6.0.0"]\
           ],\
           "linkType": "HARD"\
@@ -2700,7 +2700,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["espree", "npm:9.4.0"],\
             ["esquery", "npm:1.4.0"],\
             ["lodash", "npm:4.17.21"],\
-            ["semver", "npm:7.3.7"]\
+            ["semver", "npm:7.5.3"]\
           ],\
           "packagePeers": [\
             "@types/eslint",\
