@@ -367,7 +367,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@humanwhocodes/config-array", "npm:0.11.10"],\
             ["@humanwhocodes/object-schema", "npm:1.2.1"],\
-            ["debug", "virtual:7b63df9e7fd3e634f3f74600a77e4189b5aac590fbf03e808abe37d5aa6dfb74e14c271f86422c4b78a5ee20e062df570149c0513752cab7e8e6c8aa6ae7a5c4#npm:4.2.0"],\
+            ["debug", "virtual:352060d453a801a0fd16b073afb56a2607e33f96a5ff7faf9351853a737843ea6ad854442954d36ef1f89461751ed94f005ea67c746b39723d1da041a244f7d2#npm:4.3.4"],\
             ["minimatch", "npm:3.1.2"]\
           ],\
           "linkType": "HARD"\
@@ -976,13 +976,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["debug", [\
-        ["npm:4.2.0", {\
-          "packageLocation": "./.yarn/cache/debug-npm-4.2.0-9392baba7e-f901c2a64e.zip/node_modules/debug/",\
-          "packageDependencies": [\
-            ["debug", "npm:4.2.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
         ["npm:4.3.4", {\
           "packageLocation": "./.yarn/cache/debug-npm-4.3.4-4513954577-3dbad3f94e.zip/node_modules/debug/",\
           "packageDependencies": [\
@@ -994,20 +987,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/debug-virtual-c65a8258ad/0/cache/debug-npm-4.3.4-4513954577-3dbad3f94e.zip/node_modules/debug/",\
           "packageDependencies": [\
             ["debug", "virtual:352060d453a801a0fd16b073afb56a2607e33f96a5ff7faf9351853a737843ea6ad854442954d36ef1f89461751ed94f005ea67c746b39723d1da041a244f7d2#npm:4.3.4"],\
-            ["@types/supports-color", null],\
-            ["ms", "npm:2.1.2"],\
-            ["supports-color", null]\
-          ],\
-          "packagePeers": [\
-            "@types/supports-color",\
-            "supports-color"\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["virtual:7b63df9e7fd3e634f3f74600a77e4189b5aac590fbf03e808abe37d5aa6dfb74e14c271f86422c4b78a5ee20e062df570149c0513752cab7e8e6c8aa6ae7a5c4#npm:4.2.0", {\
-          "packageLocation": "./.yarn/__virtual__/debug-virtual-7ddfb355a3/0/cache/debug-npm-4.2.0-9392baba7e-f901c2a64e.zip/node_modules/debug/",\
-          "packageDependencies": [\
-            ["debug", "virtual:7b63df9e7fd3e634f3f74600a77e4189b5aac590fbf03e808abe37d5aa6dfb74e14c271f86422c4b78a5ee20e062df570149c0513752cab7e8e6c8aa6ae7a5c4#npm:4.2.0"],\
             ["@types/supports-color", null],\
             ["ms", "npm:2.1.2"],\
             ["supports-color", null]\
