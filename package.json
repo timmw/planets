@@ -17,7 +17,7 @@
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-vue": "^9.27.0",
     "prettier": "^3.3.2",
-    "vite": "^4.5.3"
+    "vite": "^4.5.5"
   },
   "eslintConfig": {
     "root": true,
