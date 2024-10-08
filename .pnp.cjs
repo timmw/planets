@@ -2381,10 +2381,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["rollup", [\
-        ["npm:3.29.4", {\
-          "packageLocation": "./.yarn/cache/rollup-npm-3.29.4-5e5e5f2087-8bb20a39c8.zip/node_modules/rollup/",\
+        ["npm:3.29.5", {\
+          "packageLocation": "./.yarn/cache/rollup-npm-3.29.5-4622371c71-6f8304e58a.zip/node_modules/rollup/",\
           "packageDependencies": [\
-            ["rollup", "npm:3.29.4"],\
+            ["rollup", "npm:3.29.5"],\
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"]\
           ],\
           "linkType": "HARD"\
@@ -2696,7 +2696,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["less", null],\
             ["lightningcss", null],\
             ["postcss", "npm:8.4.32"],\
-            ["rollup", "npm:3.29.4"],\
+            ["rollup", "npm:3.29.5"],\
             ["sass", null],\
             ["stylus", null],\
             ["sugarss", null],\
