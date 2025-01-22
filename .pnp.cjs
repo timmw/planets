@@ -35,7 +35,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-vue", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:9.32.0"],\
           ["lodash-es", "npm:4.17.21"],\
           ["prettier", "npm:3.4.2"],\
-          ["vite", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:5.4.11"],\
+          ["vite", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:5.4.14"],\
           ["vue", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:3.5.13"]\
         ],\
         "linkType": "SOFT"\
@@ -677,7 +677,7 @@ const RAW_RUNTIME_STATE =
           ["@vitejs/plugin-vue", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:5.2.1"],\
           ["@types/vite", null],\
           ["@types/vue", null],\
-          ["vite", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:5.4.11"],\
+          ["vite", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:5.4.14"],\
           ["vue", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:3.5.13"]\
         ],\
         "packagePeers": [\
@@ -2435,7 +2435,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-vue", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:9.32.0"],\
           ["lodash-es", "npm:4.17.21"],\
           ["prettier", "npm:3.4.2"],\
-          ["vite", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:5.4.11"],\
+          ["vite", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:5.4.14"],\
           ["vue", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:3.5.13"]\
         ],\
         "linkType": "SOFT"\
@@ -2865,17 +2865,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["vite", [\
-      ["npm:5.4.11", {\
-        "packageLocation": "./.yarn/cache/vite-npm-5.4.11-9da365ef2b-719c4dea89.zip/node_modules/vite/",\
+      ["npm:5.4.14", {\
+        "packageLocation": "./.yarn/cache/vite-npm-5.4.14-4903607bfe-ce382f4059.zip/node_modules/vite/",\
         "packageDependencies": [\
-          ["vite", "npm:5.4.11"]\
+          ["vite", "npm:5.4.14"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:5.4.11", {\
-        "packageLocation": "./.yarn/__virtual__/vite-virtual-ffd67c082e/0/cache/vite-npm-5.4.11-9da365ef2b-719c4dea89.zip/node_modules/vite/",\
+      ["virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:5.4.14", {\
+        "packageLocation": "./.yarn/__virtual__/vite-virtual-d29eaaf8f5/0/cache/vite-npm-5.4.14-4903607bfe-ce382f4059.zip/node_modules/vite/",\
         "packageDependencies": [\
-          ["vite", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:5.4.11"],\
+          ["vite", "virtual:8cee920c9342ab7a974fea78bc9e027749caaf6dc3ba41145870a72d67ce1c602db0adef39d37c387ff6f04866ee307f44cdaee850ce172a33ca766995f7b7cf#npm:5.4.14"],\
           ["@types/less", null],\
           ["@types/lightningcss", null],\
           ["@types/node", null],\
