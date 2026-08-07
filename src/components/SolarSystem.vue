@@ -45,9 +45,9 @@
 </template>
 
 <script>
-import SvgWindow from "./SvgWindow.vue";
 import bodies from "../simulation/bodies";
 import CelestialBody from "./CelestialBody.vue";
+import SvgWindow from "./SvgWindow.vue";
 
 const coords = (hyp, θ) => ({
   x: Math.cos(θ) * hyp,
@@ -97,13 +97,13 @@ export default {
         let bCalc = adjustRatios(
           b,
           this.time / this.scale.secondsPerYear,
-          this.scale
+          this.scale,
         );
         bCalc.satellites = (bCalc.satellites || []).map((s) =>
           adjustRatios(s, this.time / this.scale.secondsPerYear, this.scale, {
             x: bCalc.x,
             y: bCalc.y,
-          })
+          }),
         );
         return bCalc;
       });

@@ -6,6 +6,6 @@ It's a virtual orrery.
 
 This project uses the following technologies
 
-- [Yarn (modern version)](https://yarnpkg.com/)
-- [Vue 3](https://v3.vuejs.org/)
+- [pnpm](https://pnpm.io/)
+- [Vue](https://vuejs.org/)
 - [Vite](https://vitejs.dev/)

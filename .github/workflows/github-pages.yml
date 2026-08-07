@@ -1,38 +1,34 @@
-# This is a basic workflow to help you get started with Actions
-
 name: GitHub Pages
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   push:
-    branches: [master]
+    branches: [main]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     environment: github-pages
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+
+      - name: Setup Biome CLI
+        uses: biomejs/setup-biome@v2
+
+      - name: Run Biome
+        run: biome ci
+
+      - uses: pnpm/setup@v2
 
       - name: Install dependencies
-        run: yarn
-
-      - name: Lint
-        run: |
-          yarn lint
+        run: pnpm install
 
       - name: Build
-        run: yarn build --base=/planets/
+        run: pnpm build --base=/planets/
 
       - name: Upload
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist/
         
@@ -48,5 +44,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
