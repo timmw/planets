@@ -15,7 +15,7 @@
     "@biomejs/biome": "2.5.7",
     "@vitejs/plugin-vue": "^6.0.8",
     "@vue/compiler-sfc": "^3.5.41",
-    "vite": "^8.2.1"
+    "vite": "^8.2.4"
   },
   "packageManager": "pnpm@11.20.0"
 }
